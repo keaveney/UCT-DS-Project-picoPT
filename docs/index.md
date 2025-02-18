@@ -14,7 +14,7 @@ By the end of this tutorial, you will:
 This tutorial is divided into several sections:
 1. **[Background](background.md)** – Introduction to PET physics and Monte Carlo simulations.
 2. **Setup** – Installation instructions for necessary software.
-3. **Step-by-Step Guide** – Running the simulation and understanding the outputs.
+3. **[Step-by-Step Guide](tutorial.md)** – Running the simulation and understanding the outputs.
 4. **Data Analysis** – Working with the provided Jupyter notebook.
 5. **Exercises** – Guided tasks to explore different aspects of the detector.
 6. **Explore Further** – Open-ended suggestions for independent investigation.
