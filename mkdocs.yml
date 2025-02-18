@@ -1,0 +1,12 @@
+site_name: PET Detector Monte Carlo Tutorial
+nav:
+  - Home: index.md
+  - Background: background.md
+  - Setup: setup.md
+  - Step-by-Step Guide: tutorial.md
+  - Data Analysis: analysis.md
+  - Exercises: exercises.md
+  - Explore Further: explore.md
+
+theme:
+  name: material
