@@ -12,7 +12,7 @@ By the end of this tutorial, you will:
 
 ## Structure
 This tutorial is divided into several sections:
-1. **Background** – Introduction to PET physics and Monte Carlo simulations.
+1. **[Background](background.md)** – Introduction to PET physics and Monte Carlo simulations.
 2. **Setup** – Installation instructions for necessary software.
 3. **Step-by-Step Guide** – Running the simulation and understanding the outputs.
 4. **Data Analysis** – Working with the provided Jupyter notebook.
