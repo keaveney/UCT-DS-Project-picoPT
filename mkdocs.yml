@@ -9,4 +9,4 @@ nav:
   - Explore Further: explore.md
 
 theme:
-  name: material
+  name: mkdocs
