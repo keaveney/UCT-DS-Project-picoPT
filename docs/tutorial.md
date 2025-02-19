@@ -53,15 +53,15 @@ Open the recoCoincidences.ipynb notebook provided with the tutorial files.
 
 The notebook guides you through:
 1. **Loading Data**: Reading the coincidences.txt file into a manageable format.
+
 2. **Data Visualization**: Plotting histograms and scatter plots to visualize spatial and energy distributions.
+
 3. **Basic Image Reconstruction**: Applying simple algorithms to reconstruct images from the coincidence data.
 
 Each section includes code snippets and explanations to help you understand the analysis process.
 
 ## Next Steps
 
-With the basic simulation and analysis complete, you're encouraged to delve deeper:
+With the basic simulation and analysis up and running, it's time to work through some active excerises.
 
-Modify Simulation Parameters: Experiment with different detector configurations or source properties in the sim_picopet.py script to observe their impact on the results.
-Advanced Analysis: Enhance the Jupyter notebook by implementing more sophisticated image reconstruction techniques or statistical analyses.
-For structured exercises and ideas for further exploration, proceed to the Exercises and Explore Further sections.
+Proceed to the [Exercises](exercises.md) section.
