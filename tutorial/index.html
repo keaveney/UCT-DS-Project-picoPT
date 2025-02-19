@@ -101,6 +101,18 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-understanding-the-output" class="nav-link">2. Understanding the Output</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-analyzing-coincidence-events" class="nav-link">3. Analyzing Coincidence Events</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#next-steps" class="nav-link">Next Steps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -124,11 +136,36 @@
 <p><code>cd path/to/your/simulation/directory</code></p>
 </li>
 <li>
-<p><strong>Execute the Simulation Script: Run the simulation by executing</strong>:
-    <code>python sim_picopet.py</code></p>
+<p><strong>Execute the Simulation Script: Run the simulation by executing</strong>:</p>
+<p><code>python sim_picopet.py</code></p>
 </li>
 </ol>
-<p>This script sets up the PET detector geometry, defines the radioactive source, and configures the simulation parameters. Upon execution, it will generate output data files containing the simulation results.</p></div>
+<p>This script sets up the PET detector geometry, defines the radioactive source, and configures the simulation parameters. Upon execution, it will generate output data files containing the simulation results.</p>
+<h2 id="2-understanding-the-output">2. Understanding the Output</h2>
+<p>After running the simulation, you'll find several output files in your directory. Key files include:</p>
+<p>output.root: A ROOT file containing detailed information about each detected event.
+coincidences.txt: A text file listing detected coincidence events, crucial for image reconstruction.
+Understanding these files is essential for analyzing the detector's performance and the quality of the simulated PET scan.</p>
+<h2 id="3-analyzing-coincidence-events">3. Analyzing Coincidence Events</h2>
+<p>To analyze the simulation data:</p>
+<ol>
+<li><strong>Open the Jupyter Notebook: Launch Jupyter Notebook from your terminal</strong>:</li>
+</ol>
+<pre><code>jupyter notebook
+</code></pre>
+<p>Alternatively you can open notebooks in an IDE, e.g, VSCode</p>
+<p>Open the recoCoincidences.ipynb notebook provided with the tutorial files.</p>
+<p>2.<strong>Explore the Notebook</strong>: </p>
+<p>The notebook guides you through:
+1. <strong>Loading Data</strong>: Reading the coincidences.txt file into a manageable format.
+2. <strong>Data Visualization</strong>: Plotting histograms and scatter plots to visualize spatial and energy distributions.
+3. <strong>Basic Image Reconstruction</strong>: Applying simple algorithms to reconstruct images from the coincidence data.</p>
+<p>Each section includes code snippets and explanations to help you understand the analysis process.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>With the basic simulation and analysis complete, you're encouraged to delve deeper:</p>
+<p>Modify Simulation Parameters: Experiment with different detector configurations or source properties in the sim_picopet.py script to observe their impact on the results.
+Advanced Analysis: Enhance the Jupyter notebook by implementing more sophisticated image reconstruction techniques or statistical analyses.
+For structured exercises and ideas for further exploration, proceed to the Exercises and Explore Further sections.</p></div>
             </div>
         </div>
 
