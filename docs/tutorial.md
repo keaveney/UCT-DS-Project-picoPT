@@ -14,11 +14,14 @@ Assuming you've completed the setup as described in the [Setup](setup.md) sectio
 
 1. **Navigate to the Simulation Directory**: Open your terminal or command prompt and change to the directory containing the `sim_picopet.py` script.
 
-   ```bash
-   cd path/to/your/simulation/directory
+    ```
+    cd path/to/your/simulation/directory
+    ```
 
 
 2. **Execute the Simulation Script: Run the simulation by executing**:
-    ```python sim_picopet.py
+    ```
+    python sim_picopet.py
+    ```
 
 This script sets up the PET detector geometry, defines the radioactive source, and configures the simulation parameters. Upon execution, it will generate output data files containing the simulation results.
