@@ -5,7 +5,7 @@ import opengate as gate
 import opengate.contrib.phantoms.nemaiec as gate_iec
 #import opengate.contrib.phantoms.jaszczak as gate_jaszczak
 
-import opengate.sources.voxelsources as vox_source
+import picopet_source as gate_iec
 
 from box import Box
 
@@ -77,9 +77,6 @@ if __name__ == "__main__":
 
     #jaszczak_phantom = gate_jaszczak.add_jaszczak_phantom(sim)
     #jaszczak_source = gate_jaszczak.add_background_source(sim, jaszczak_name="jaszczak", src_name="source", activity_bqml=1e-14)
-
-
-
     
    # add a simple waterbox with a hot sphere inside
     waterbox = sim.add_volume("Box", "waterbox")
@@ -106,8 +103,6 @@ if __name__ == "__main__":
     #    source.activity = 1e5 * Bq * total_yield
     source.half_life = 6586.26 * sec
 
-    vsource = vox_source.VoxelSource(name= "test", image="Voxelized_mesh50XCAT_Head/VoxHead_338x248x256.h33")
-    source = sim.add_source(vsource, name= "test")
 
     # add IEC phantom
     #iec_phantom = gate_iec.add_iec_phantom(sim, "iec")
