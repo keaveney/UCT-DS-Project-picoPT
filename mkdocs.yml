@@ -3,8 +3,8 @@ nav:
   - Home: index.md
   - Background: background.md
   - Setup: setup.md
-  - Step-by-Step Guide: tutorial.md
-  - Data Analysis: analysis.md
+  - Simulation: simulation.md
+  - Data Analysis & Imaging: analysis.md
   - Explore Further: explore.md
 
 theme:
