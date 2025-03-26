@@ -88,13 +88,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#pet-detector-monte-carlo-tutorial" class="nav-link">PET Detector Monte Carlo Tutorial</a>
+            <li class="nav-item" data-bs-level="1"><a href="#pet-detector-monte-carlo-project" class="nav-link">PET Detector Monte Carlo Project</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#introduction" class="nav-link">Introduction</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#learning-objectives" class="nav-link">Learning Objectives</a>
+            <li class="nav-item" data-bs-level="2"><a href="#project-objectives" class="nav-link">Project Objectives</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -113,17 +113,21 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="pet-detector-monte-carlo-tutorial">PET Detector Monte Carlo Tutorial</h1>
+<h1 id="pet-detector-monte-carlo-project">PET Detector Monte Carlo Project</h1>
 <h2 id="introduction">Introduction</h2>
-<p>Welcome to the PET Detector Monte Carlo Tutorial! In this guided exercise, you will learn how to simulate a novel medical Positron Emission Tomography (PET) detector using Monte Carlo methods and analyze the results.</p>
-<h2 id="learning-objectives">Learning Objectives</h2>
-<p>By the end of this tutorial, you will:
-- Understand the principles of PET imaging and why simulations are necessary.
-- Run a Monte Carlo simulation of a PET detector using OpenGATE.
-- Analyze coincidence events and explore detector performance.
-- Modify simulation parameters to investigate their impact on data quality.</p>
+<p>Welcome to the PET Detector Monte Carlo Project! In this guided exercise, you will learn how to simulate a novel medical Positron Emission Tomography (PET) detector using Monte Carlo methods and analyze the results towards producing precise images. The over-arching goal is to use simulation to explore how the cost of PET detctor construction can be reduced while maintainig clinicallly-relevant PET images. A low-cost PET detector
+mass-produced would have an enormous imapct in low- and middle-income countries across the world.</p>
+<h2 id="project-objectives">Project Objectives</h2>
+<p>You will:
+- Understand the principles of PET imaging and why simulations are useful in designing novel detectors.
+- Build and run a Monte Carlo simulation of a PET detector using OpenGATE 10.
+- Analyze the simulation outputs to:
+    - Indentify <em>coincidence</em> events 
+    - Produce PET images with the classic <em>Filtered Back Projection</em> method.
+- Use your new expertise in simulation to investigate the effect on dector design choices on image quality.
+- Investigate AI/ML-based PET imaging techniques and their effects on image quality.</p>
 <h2 id="structure">Structure</h2>
-<p>This tutorial is divided into several sections:</p>
+<p>This project is divided into several sections:</p>
 <ol>
 <li>
 <p><strong><a href="background/">Background</a></strong> – Introduction to PET physics and Monte Carlo simulations.</p>
@@ -132,20 +136,20 @@
 <p><strong><a href="setup/">Setup</a></strong> – Installation instructions for necessary software.</p>
 </li>
 <li>
-<p><strong><a href="tutorial.md">Step-by-Step Guide</a></strong> – Running the simulation and understanding the outputs.</p>
+<p><strong><a href="simulation/">Simulation</a></strong> – Running the simulation and understanding the outputs.</p>
 </li>
 <li>
-<p><strong><a href="analysis/">Data Analysis</a></strong> – Working with the provided Jupyter notebook.</p>
+<p><strong><a href="analysis/">Analysis</a></strong> – Undertstanding the simulation output and basic imaging.</p>
 </li>
 <li>
-<p><strong><a href="exercises/">Exercises</a></strong> – Guided tasks to explore different aspects of the detector.</p>
+<p><strong><a href="exercises/">Exercises</a></strong> – Guided tasks to explore different aspects of the detector design.</p>
 </li>
 <li>
 <p><strong><a href="explore/">Explore Further</a></strong> – Open-ended suggestions for independent investigation.</p>
 </li>
 </ol>
 <h2 id="getting-started">Getting Started</h2>
-<p>To begin, head over to the <a href="setup/">Setup</a> section for installation instructions. Once everything is installed, move on to the <a href="tutorial.md">Step-by-Step Guide</a> to start running simulations!</p></div>
+<p>To begin, head over to the <a href="setup/">Setup</a> section for installation instructions. Once everything is installed, move on to the <a href="simulation/">Simulation</a> to start running simulations!</p></div>
             </div>
         </div>
 
@@ -227,5 +231,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-03-20 12:00:34.910781+00:00
+Build Date UTC : 2025-03-26 21:10:43.970440+00:00
 -->
