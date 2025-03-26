@@ -87,12 +87,116 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#introduction-to-pet-positron-emission-tomography-imaging" class="nav-link">Introduction to PET (Positron Emission Tomography) Imaging</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#basic-physics-of-pet" class="nav-link">Basic Physics of PET</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#detector-design-and-layout" class="nav-link">Detector Design and Layout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#key-concepts-in-pet-imaging" class="nav-link">Key Concepts in PET Imaging</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#medical-applications-and-examples" class="nav-link">Medical Applications and Examples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#toward-low-cost-pet-in-low-resource-settings" class="nav-link">Toward Low-Cost PET in Low-Resource Settings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#further-reading" class="nav-link">Further Reading</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>The Background Info on Medical PET Imaging will go here.</p></div>
+<h1 id="introduction-to-pet-positron-emission-tomography-imaging">Introduction to PET (Positron Emission Tomography) Imaging</h1>
+<p>Positron Emission Tomography (PET) is a <strong>nuclear medical imaging</strong> technique that provides functional, in vivo images of biochemical processes. Unlike anatomical imaging (CT or MRI), PET visualizes metabolic activity by detecting pairs of high-energy gamma photons produced inside the body. This one-page brief introduces the physics and instrumentation of PET for physics students new to the topic, in preparation for a PET Monte Carlo simulation project.</p>
+<h2 id="basic-physics-of-pet">Basic Physics of PET</h2>
+<ul>
+<li>
+<p><strong>Positron Decay &amp; Annihilation:</strong> PET tracers are radionuclides that undergo <strong>β⁺ decay</strong>, emitting a positron (e<sup>+</sup>). Common PET isotopes include <sup>18</sup>F (half-life ~110 min), <sup>11</sup>C (~20 min), etc. When a positron slows down and encounters an electron, they annihilate. The annihilation converts their mass to energy, producing two 511 keV gamma photons that fly out in nearly opposite directions (approximately 180° apart) . This back-to-back photon emission is the fundamental signal PET scanners exploit. <em>(In an equation: e<sup>+</sup> + e<sup>−</sup> → 2γ at 511 keV each.)</em></p>
+</li>
+<li>
+<p><strong>Coincidence Detection:</strong> A ring of detectors surrounds the patient and registers these gamma photon pairs. PET <strong>coincidence electronics</strong> identify nearly simultaneous detections (within a narrow time window, typically ~10 ns or less ) in opposite detectors. A coincident pair defines a <strong>line of response (LOR)</strong> along which the annihilation occurred. By collecting many such events, PET can computationally reconstruct the spatial distribution of the radiotracer.</p>
+</li>
+</ul>
+<p><img alt="Figure: Schematic of a PET scanner. A patient is surrounded by a ring of scintillation detectors. A positron (e&lt;sup&gt;+&lt;/sup&gt;) from an injected radiotracer annihilates with an electron (e&lt;sup&gt;−&lt;/sup&gt;), producing two back-to-back 511 keV gammas (red arrows). A **coincidence processing unit** identifies near-simultaneous detections in opposing detectors (highlighted in red), defining an LOR. The list of coincident events (sinogram) is then used in **image reconstruction** to produce a PET image (here, an FDG brain scan is shown).**" src="link-to-image" /></p>
+<h2 id="detector-design-and-layout">Detector Design and Layout</h2>
+<ul>
+<li>
+<p><strong>Scintillators and Photodetectors:</strong> PET detectors typically use scintillating crystals (e.g. BGO, LSO) coupled to photomultiplier tubes or silicon photomultipliers. The scintillator converts each 511 keV photon into a flash of light, which the photodetector then converts to an electrical signal. Modern PET scanners have thousands of crystal elements tiled in <strong>detector blocks</strong>. These crystals have high density and atomic number for good stopping power (high 511 keV absorption probability) and fast timing. <strong>Energy discrimination</strong> electronics reject events that don’t deposit ~511 keV (to filter out Compton-scattered photons).</p>
+</li>
+<li>
+<p><strong>Ring Geometry:</strong> Detectors are arranged in a ring (or multiple rings stacked axially, forming a cylinder) around the patient . Early PET systems had a single ring (imaging one slice at a time), whereas modern scanners cover a volume with multi-ring arrays. The <strong>axial field-of-view (FOV)</strong> can range from a few cm (small brain PET) to ~20 cm in whole-body scanners (and even up to ~70 cm in new total-body PET). The detector ring geometry provides many opposing detector pairs to capture annihilations from all angles.</p>
+</li>
+<li>
+<p><strong>Typical PET/CT Configuration:</strong> In clinical PET, a <strong>hybrid PET/CT</strong> scanner is common, where a CT scanner (for anatomy and attenuation correction) is combined with the PET detectors in one machine . However, the core PET physics and detectors remain the same whether or not CT or MRI is attached.</p>
+</li>
+</ul>
+<h2 id="key-concepts-in-pet-imaging">Key Concepts in PET Imaging</h2>
+<ul>
+<li><strong>Spatial Resolution:</strong> Modern clinical PET scanners achieve about 4–6 mm resolution. The resolution is limited by multiple factors :</li>
+<li><em>Detector element size</em> – the finite crystal size and inability to pinpoint the exact interaction position dominate the resolution limit.</li>
+<li><em>Positron range</em> – the positron travels a few millimeters before annihilation, blurring the origin (e.g. <sup>18</sup>F emits a low-energy positron with short range ~0.6 mm, whereas <sup>82</sup>Rb’s positrons travel several mm).</li>
+<li><em>Photon non-collinearity</em> – the two 511 keV photons are not emitted at exactly 180° due to residual positron-electron momentum (up to ~0.5° deviation), causing uncertainty that grows with distance from the center (a ~2 mm blurring at a 50 cm diameter scanner).</li>
+<li>
+<p><em>Other factors</em> – detector timing/energy uncertainty, scatter and random coincidences, and reconstruction algorithms also affect effective resolution .</p>
+</li>
+<li>
+<p><strong>Time-of-Flight (TOF) PET:</strong> Time-of-flight technique improves image signal-to-noise by using the difference in gamma arrival times to localize the annihilation along the LOR. If one detector gets the photon slightly before the opposite detector, the event likely occurred closer to the first detector. The timing resolution of current TOF-PET scanners (~200–600 ps) corresponds to a spatial localization of ~3–9 cm along the line . For example, 500 ps timing gives ~7.5 cm uncertainty . While this doesn’t sharpen the image resolution to 7.5 cm, it <strong>reduces noise</strong> by constraining the area of reconstruction for each event, allowing faster and clearer image reconstruction. TOF information effectively boosts sensitivity, especially in large patients, by requiring fewer counts for the same image quality.</p>
+</li>
+<li>
+<p><strong>Image Reconstruction:</strong> PET data consist of millions of coincidence LORs. Reconstruction algorithms (analytical <strong>filtered backprojection</strong> or iterative methods like <strong>MLEM/OSEM</strong>) compute the radiotracer concentration image from these LORs. The result is a 3D image of the tracer distribution (often displayed as slices or fused with CT/MRI). Advanced corrections are applied for physical effects: attenuation (photon absorption in tissue), scatter, randoms, and detector dead time. In this project’s simulations, you will generate raw PET event data and experiment with simple reconstruction techniques to see these concepts in action.</p>
+</li>
+</ul>
+<h2 id="medical-applications-and-examples">Medical Applications and Examples</h2>
+<ul>
+<li>
+<p><strong>Oncology:</strong> PET’s biggest impact is in cancer imaging. By injecting tumor-seeking radiotracers, PET can detect malignant lesions with high sensitivity. A common tracer is <strong>[<sup>18</sup>F]fluorodeoxyglucose (FDG)</strong>, a radioactive glucose analog. Cancer cells have high glucose metabolism, so FDG-PET highlights tumors as “hot spots.” In fact, ~90% of PET scans in routine clinical practice use FDG for cancer detection, staging, or monitoring . PET is particularly valuable in <strong>brain oncology</strong> – for example, mapping brain tumors or metastases. In brain cancer, PET can help distinguish tumor recurrence from radiation necrosis and guide biopsy to the most active tumor region. (One challenge: the normal brain also consumes glucose, so specialized tracers like <sup>11</sup>C-methionine or <sup>18</sup>F-FET are sometimes used for brain tumors to improve specificity.)</p>
+</li>
+<li>
+<p><strong>Neuroscience and Other Uses:</strong> Besides oncology, PET is used in neurology (e.g. imaging amyloid plaques in Alzheimer’s disease, or measuring brain perfusion and metabolism) , cardiology (blood flow and viability of heart muscle), and infection/inflammation imaging. PET can quantify physiology in absolute terms, making it a powerful research tool as well as a diagnostic modality.</p>
+</li>
+<li>
+<p><strong>Hybrid Imaging:</strong> Most PET scanners today are combined with CT (PET/CT) or MRI (PET/MRI). The CT provides anatomical reference and a map for correcting attenuation of PET signals. In neuro-oncology, MRI provides detailed brain structure while PET adds functional tumor information, the combination enhancing diagnostic accuracy.</p>
+</li>
+</ul>
+<h2 id="toward-low-cost-pet-in-low-resource-settings">Toward Low-Cost PET in Low-Resource Settings</h2>
+<p>PET technology is high-end and costly, which limits its availability worldwide. A PET/CT scanner can cost on the order of \$1–2 million (plus the expense of a cyclotron or radiotracer supply chain). <strong>Developing affordable PET</strong> systems is an active area of research, crucial for low- and middle-income countries where cancer burden is rising but advanced imaging resources are scarce. Some points and initiatives:</p>
+<ul>
+<li>
+<p><strong>Simplified or Dedicated Systems:</strong> One approach is to build <strong>dedicated PET scanners</strong> for specific organs (like brain-only PET) which can be smaller and cheaper than whole-body systems . Reducing the scanner size and complexity can cut costs if only targeted imaging is needed (for example, a compact brain PET unit for a neurology clinic).</p>
+</li>
+<li>
+<p><strong>Using Existing Gamma Cameras:</strong> It’s even possible to perform PET using modified <strong>dual-head gamma cameras</strong> (standard SPECT cameras) with coincidence electronics. This yields lower image quality and longer scan times, but provides a low-cost on-site solution for centers that cannot afford a full PET scanner .</p>
+</li>
+<li>
+<p><strong>Innovative Detector Materials:</strong> The expensive <strong>inorganic crystals</strong> (like LYSO) in modern PET contribute significantly to cost . Research groups (e.g. the J-PET collaboration in Poland) are exploring <strong>plastic scintillators</strong> as a low-cost alternative. Plastics are far cheaper than LYSO and allow building long detectors, potentially reducing cost of a total-body PET by a factor of 4–8 . The trade-off is that plastics have lower gamma detection efficiency, which can reduce image quality if not compensated by clever design (e.g. using multiple layers of plastic detectors to improve sensitivity) . Other innovations include new solid-state photodetectors (SiPMs) that are compact and dropping in price, and modular “scanner in a suitcase” designs for portability.</p>
+</li>
+<li>
+<p><strong>Global Perspective:</strong> The World Health Organization and IAEA have highlighted the disparity in PET access. An IAEA study (2020) estimated that <strong>96 countries</strong> needed to install over 200 PET/CT scanners to meet basic cancer imaging needs, with the greatest gaps in low-income regions . Addressing this inequity is a motivation for low-cost PET development. Ongoing efforts aim to <strong>democratize PET imaging</strong> so that advanced diagnostics are not limited to high-income hospitals. As physics graduates, contributing to cost-effective technologies (through better detectors, electronics, or algorithms) is a meaningful engineering challenge.</p>
+</li>
+</ul>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li><strong>Cherry &amp; Dahlbom (2006)</strong> – <em>PET Physics, Instrumentation, and Scanners</em> (in <strong>PET</strong> by M. Phelps, Springer) – Comprehensive chapter on PET detector technology and physics .  </li>
+<li><strong>Cherry, Sorenson &amp; Phelps (2012)</strong> – <em>Physics in Nuclear Medicine, 4th Ed.</em> – Textbook covering nuclear medicine physics (PET instrumentation, imaging equations, etc.).  </li>
+<li><strong>Knoll (2010)</strong> – <em>Radiation Detection and Measurement, 4th Ed.</em> – Classic text on radiation detectors (scintillation detector principles, photomultipliers, and counting electronics relevant to PET).  </li>
+<li><strong>Moses (2011)</strong> – “Fundamental Limits of Spatial Resolution in PET” in <em>NIM A</em> – Pedagogical paper analyzing physical resolution limits in PET cameras .  </li>
+<li><strong>Catana et al. (2019)</strong> – <em>J. Nucl. Med.</em> 60(8):1044 – Review of dedicated brain PET scanner designs, discussing trade-offs between performance and cost .</li>
+</ul></div>
             </div>
         </div>
 
